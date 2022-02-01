@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 ## LAB 1: ARTEMIS
 
 This lab involved getting familiar with the Sparkfun Redboard Artemis Nano, the microcontroller used throughout this course. Through a series of basic examples, we understand the capabilities of the Artemis Nano and their applications to different robot tasks.

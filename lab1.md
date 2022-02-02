@@ -10,9 +10,9 @@ This lab involved getting familiar with the Sparkfun Redboard Artemis Nano, the 
 
 #### Software Installations
 The Artemis Nano is compatible with the Arduino IDE software suite, which means that we can use Arduino-like syntax to perform functions related to the ports on the microcontroller. I used the instructions in the lab handout to configure the Arduino environment on my computer for interacting with the Artemis Nano, mainly through these following steps:
--Update the Arduino IDE to its latest version (I had an older version installed, now updated to v1.8.19)
--Add the Arduino Core for the Sparkfun Apollo3 (the processor onboard the Artemis Nano) by entering the custom link *here* in the Boards Manager URL
--Install the Sparkfun Apollo3 library through the Boards Manager, and select the Sparkfun Redboard Artemis Nano from the Boards dropdown menu - after this, we’re all set to plug in the cable to the Artemis Nano!
+* Update the Arduino IDE to its latest version (I had an older version installed, now updated to v1.8.19)
+* Add the Arduino Core for the Sparkfun Apollo3 (the processor onboard the Artemis Nano) by entering the custom link `https://raw.githubusercontent.com/sparkfun/Arduino_Apollo3/main/package_sparkfun_apollo3_index.json` in the Boards Manager URL
+* Install the Sparkfun Apollo3 library through the Boards Manager, and select the Sparkfun Redboard Artemis Nano from the Boards dropdown menu - after this, we’re all set to plug in the cable to the Artemis Nano!
 
 #### Example 1: Blink
 The Blink sketch is the default example tested on every Arduino board, which turns on and off the onboard LED connected to pin 13 at 1 second intervals. On the Artemis Nano, the onboard LED is connected to pin 19, which can be accessed through the `LED_BUILTIN` environment variable. The video snippet below shows the LED blinking on and off as desired.

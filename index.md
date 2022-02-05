@@ -1,7 +1,7 @@
 <head>
 		<title>ECE 4960 - Fast Robots, Aparajito Saha</title>
-		<link rel="shortcut icon" type="image/png" href="/images/fastrobot.png">
-        	<link rel="icon" type="image/png" href="/images/fastrobot.png">
+		<link rel="shortcut icon" type="image/png" href="images/fastrobot.png">
+        	<link rel="icon" type="image/png" href="images/fastrobot.png">
 </head>
 
 ## Introduction

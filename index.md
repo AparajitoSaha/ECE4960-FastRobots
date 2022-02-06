@@ -1,7 +1,7 @@
 <head>
 		<title>ECE 4960 - Fast Robots, Aparajito Saha</title>
-		<link rel="shortcut icon" type="image/png" href="images/fastrobot.png">
-        	<link rel="icon" type="image/png" href="images/fastrobot.png">
+		<link rel="shortcut icon" type="image/png" href="./images/fastrobot.png">
+        	<link rel="icon" type="image/png" href="./images/fastrobot.png">
 </head>
 
 ## Introduction
@@ -10,3 +10,7 @@ This webpage documents my progress through ECE 4960: Design and Implementation o
 [LAB 1: ARTEMIS](./lab1.html)
 
 Lab 1 covers the usage of the Artemis Nano microcontroller through a series of basic examples illustrating the various abilities of the board.
+
+[LAB 2: BLUETOOTH](./lab2.html)
+
+Lab 2 walks through Bluetooth communication with the Artemis Nano by testing and developing communication characteristics with the microcontroller.

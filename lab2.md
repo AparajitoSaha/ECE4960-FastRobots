@@ -18,9 +18,13 @@ These steps can be found in greater detail on the lab webpage; this is the seque
 
 #### Initializing Bluetooth
 
-We first burn the `ble_arduino.ino` sketch into the Artemis Nano. This allows us to see the MAC address of the Artemis, a unique hexadecimal code that identifies the device, on the serial monitor. I then loaded this address into the `artemis_address` field in `connection.yaml`, which allows the python code to connect to my Artemis Nano. 
+We first burn the `ble_arduino.ino` sketch into the Artemis Nano. This allows us to see the MAC address of the Artemis, a unique hexadecimal code that identifies the device, on the serial monitor. I then loaded this address into the `artemis_address` field in `connection.yaml`, which allows the python code to connect to my Artemis Nano.
+
+![Connecting to Artemis](https://github.com/AparajitoSaha/ECE4960-FastRobots/blob/main/images/ble_connect.png)
 
 In this course, we will be using Jupyter notebooks to execute python code related to the robot. I started with the `demo.ipynb` notebook, which illustrates useful tools like logging capabilities, essential methods of the `ArtemisBLEController`, functions that access GATT characteristics from the Artemis and commands that can send and receive data to and from the Artemis. 
+
+![Ping Pong Bluetooth](https://github.com/AparajitoSaha/ECE4960-FastRobots/blob/main/images/ble_pingpong.png)
 
 #### Lab Task 1
 
@@ -50,6 +54,8 @@ case ECHO:
             
         break;
 ```
+
+![Task 1: Augmented Echo](https://github.com/AparajitoSaha/ECE4960-FastRobots/blob/main/images/ble_task1.png)
 
 #### Lab Task 2
 
@@ -87,6 +93,10 @@ case SEND_THREE_FLOATS:
         break;
 ```
 
+![Task 2: Three Floats, Python](https://github.com/AparajitoSaha/ECE4960-FastRobots/blob/main/images/ble_task2_python.png)
+
+![Task 2: Three Floats, Serial Monitor](https://github.com/AparajitoSaha/ECE4960-FastRobots/blob/main/images/ble_serialmonitor.png)
+
 #### Lab Task 3
 
 In this task, we want to mimic the functionality of `receive_float` in Python without calling the function every time to access the `BLEFloatCharacteristic` from the Artemis. On inspecting the code for the provided bluetooth modules, I found the `bytearray_to_float` function called by the `receive_float` method. This function retrieves the BLEFloatCharacteristic transmitted by the Artemis depending on the desired UUID (in this case, RX_FLOAT). I defined a global variable `float_characteristic` that is updated within a callback function, passing the function as input to the `ble.start_notify` and `ble.stop_notify` handlers.
@@ -103,6 +113,8 @@ ble.start_notify(ble.uuid['RX_FLOAT'], float_notification_handler)
 time.sleep(5)
 ble.stop_notify(ble.uuid['RX_FLOAT'])
 ```
+
+![Task 3: Notification Handler](https://github.com/AparajitoSaha/ECE4960-FastRobots/blob/main/images/ble_task3.png)
 
 #### Lab Task 4
 

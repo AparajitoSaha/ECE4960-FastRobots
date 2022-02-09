@@ -20,11 +20,11 @@ These steps can be found in greater detail on the lab webpage; this is the seque
 
 We first burn the `ble_arduino.ino` sketch into the Artemis Nano. This allows us to see the MAC address of the Artemis, a unique hexadecimal code that identifies the device, on the serial monitor. I then loaded this address into the `artemis_address` field in `connection.yaml`, which allows the python code to connect to my Artemis Nano.
 
-![Connecting to Artemis](https://github.com/AparajitoSaha/ECE4960-FastRobots/blob/main/images/ble_connect.png)
+![Connecting to Artemis](./images/ble_connect.png)
 
 In this course, we will be using Jupyter notebooks to execute python code related to the robot. I started with the `demo.ipynb` notebook, which illustrates useful tools like logging capabilities, essential methods of the `ArtemisBLEController`, functions that access GATT characteristics from the Artemis and commands that can send and receive data to and from the Artemis. 
 
-![Ping Pong Bluetooth](https://github.com/AparajitoSaha/ECE4960-FastRobots/blob/main/images/ble_pingpong.png)
+![Ping Pong Bluetooth](./images/ble_pingpong.png)
 
 #### Lab Task 1
 
@@ -55,7 +55,7 @@ case ECHO:
         break;
 ```
 
-![Task 1: Augmented Echo](https://github.com/AparajitoSaha/ECE4960-FastRobots/blob/main/images/ble_task1.png)
+![Task 1: Augmented Echo](./images/ble_task1.png)
 
 #### Lab Task 2
 
@@ -93,9 +93,9 @@ case SEND_THREE_FLOATS:
         break;
 ```
 
-![Task 2: Three Floats, Python](https://github.com/AparajitoSaha/ECE4960-FastRobots/blob/main/images/ble_task2_python.png)
+![Task 2: Three Floats, Python](./images/ble_task2_python.png)
 
-![Task 2: Three Floats, Serial Monitor](https://github.com/AparajitoSaha/ECE4960-FastRobots/blob/main/images/ble_serialmonitor.png)
+![Task 2: Three Floats, Serial Monitor](./images/ble_serialmonitor.png)
 
 #### Lab Task 3
 
@@ -114,7 +114,7 @@ time.sleep(5)
 ble.stop_notify(ble.uuid['RX_FLOAT'])
 ```
 
-![Task 3: Notification Handler](https://github.com/AparajitoSaha/ECE4960-FastRobots/blob/main/images/ble_task3.png)
+![Task 3: Notification Handler](./images/ble_task3.png)
 
 #### Lab Task 4
 

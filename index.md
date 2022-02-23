@@ -14,3 +14,11 @@ Lab 1 covers the usage of the Artemis Nano microcontroller through a series of b
 [LAB 2: BLUETOOTH](./lab2.html)
 
 Lab 2 walks through Bluetooth communication with the Artemis Nano by testing and developing communication characteristics with the microcontroller.
+
+[LAB 3: SENSORS](./lab3.html)
+
+Lab 3 involves setting up the time of flight sensors and inertial measurement unit with the Artemis Nano and investigating their functionality.
+
+[LAB 4: CHARACTERIZE THE CAR](./lab4.html)
+
+Lab 4 allows us to characterize the physical parameters of the car that will be used as our robot, and studies the performance of relevant aspects of the car with remote control.

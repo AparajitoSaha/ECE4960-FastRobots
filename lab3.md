@@ -35,7 +35,7 @@ To get both sensors working, I used the XSHUT pin to shut down ToF 1, assigned T
 
 ![ToF - both sensors online](./images/ToF_bothworking.png)
 
-![ToF varied distance measurements](./images/bothTOF_varied\ distance.png)
+![ToF varied distance measurements](./images/bothTOF_varieddistance.png)
 
 ### 3B: Inertial Measurement Unit
 

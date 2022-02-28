@@ -29,13 +29,13 @@ For the purposes of this course, I believe that using both sensors with the “s
 
 After completing the necessary solder connections, I ran the sample script to scan for the I2C address of the sensor. However, since I had soldered the IMU before either ToF sensor, the sketch printed out every single I2C address possible (a known issue addressed in the course discussion). Seeing no other errors, I moved on to testing the `Example1_ReadDistance` to read distance from the sensor as provided by the library. I mounted the sensor to my laptop using a piece of double sided tape, and used a measuring tape to check the distance between the sensor and (a) a white plaster wall and (b) a wooden door - there was no clearly observable difference between the surfaces, although the values did tend to be a little lower when measuring distances greater than 1.5 meters from the door. I conducted measurements using the short and medium ranging modes - the graph below averages the distance readings from both surfaces. In addition, I set the timing budget to its minimal value of 20ms using the `setTimingBudgetinMs()` function to check the impact on the data acquired from the ToF sensors. I found that there is no significant difference in the accuracy of the sensor with the change in timing budget, meaning that we can employ a faster rate of acquisition for our robot.
 
-![ToF distance measurement](./images/'ToF distance measurement.png')
+![ToF distance measurement](./images/ToF distance measurement.png)
 
 To get both sensors working, I used the XSHUT pin to shut down ToF 1, assigned ToF 2 a new I2C address (0x33) and reactivated ToF 1. The code for this section and the output from the serial monitor is shown below.
 
 ![ToF - both sensors online](./images/ToF_bothworking.png)
 
-![ToF varied distance measurements](./images/'bothToF_varied distance.png')
+![ToF varied distance measurements](./images/bothToF_varied distance.png)
 
 ### 3B: Inertial Measurement Unit
 
@@ -43,7 +43,7 @@ A first run of the example code did not work - I realized that I needed to chang
 
 ![IMU I2C address](./images/IMU_I2Caddr.png)
 
-![Connecting to Artemis](./images/'IMU serial monitor.png')
+![Connecting to Artemis](./images/IMU serial monitor.png)
 
 #### Accelerometer
 

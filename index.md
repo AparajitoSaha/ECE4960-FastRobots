@@ -22,3 +22,8 @@ Lab 3 involves setting up the time of flight sensors and inertial measurement un
 [LAB 4: CHARACTERIZE THE CAR](./lab4.html)
 
 Lab 4 allows us to characterize the physical parameters of the car that will be used as our robot, and studies the performance of relevant aspects of the car with remote control.
+
+
+[LAB 5: OPEN LOOP CONTROL](./lab5.html)
+
+Lab 5 requires us to factor in the motor drivers to our hardware setup and mount all the hardware on the robot before trying some basic open loop control commands.

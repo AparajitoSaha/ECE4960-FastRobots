@@ -27,3 +27,19 @@ Lab 4 allows us to characterize the physical parameters of the car that will be 
 [LAB 5: OPEN LOOP CONTROL](./lab5.html)
 
 Lab 5 requires us to factor in the motor drivers to our hardware setup and mount all the hardware on the robot before trying some basic open loop control commands.
+
+[LAB 6: CLOSED LOOP CONTROL](./lab6.html)
+
+Under Construction.
+
+[LAB 7: KALMAN FILTER](./lab7.html)
+
+Under Construction.
+
+[LAB 8: STUNTS!](./lab8.html)
+
+Under Construction.
+
+[LAB 9: MAPPING](./lab5.html)
+
+Lab 9 starts the second sequence of assignments by making the robot map a static environment that will ultimately be used for localization and planning tasks.

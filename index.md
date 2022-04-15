@@ -40,6 +40,6 @@ Under Construction.
 
 Under Construction.
 
-[LAB 9: MAPPING](./lab5.html)
+[LAB 9: MAPPING](./lab9.html)
 
 Lab 9 starts the second sequence of assignments by making the robot map a static environment that will ultimately be used for localization and planning tasks.

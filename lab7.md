@@ -10,7 +10,7 @@ The second of a three part sequence culminating in performing stunts with our ro
 
 #### Collaborators
 
-I worked with Krithik Ranjan and Aryaa Pai for this lab. Due to malfunctioning hardware, I used Krithik’s robot for collecting ToF data and implementing the Kalman filter.
+I worked with Krithik Ranjan and Aryaa Pai for this lab. Due to conducting a last minute fix needed on most of my hardware, I used Krithik’s robot for collecting ToF data and implementing the Kalman filter.
 
 #### Step Response
 

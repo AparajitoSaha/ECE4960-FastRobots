@@ -28,9 +28,28 @@ With the measured distance values timestamped, we can roughly compute the veloci
 
 Based on the lecture notes, we can compute the A and B matrices as follows:
 
+```python
+# Steady state speed = 1.6 m/s ==> d = 1 / 1600 
+d = 0.00066
 
+# 90% Rise time = 1.8 ==> m = -d * t_90 / ln(0.1)
+m = 4.6903e-04 
 
-With the A and B matrices calculated, we can use the acquired distance values, the PWM values and the previous state estimation of the robot to calculate the new state as given in the formula above. I used the C vector defined for task B in the lecture handout alongside matrices A and B calculated for one timestep; after about 5 iterations, I obtained a fairly precise estimation of the robot’s state using the Kalman filter.
+A = np.array([  [0,1]   , 
+                [0, -d/m]])
+B = np.array([  [0] , 
+                [1/m]])
+                
+A = [[1.         0.094     ]
+    [0.         0.87975183]]
+    
+B = [[  0.       ]
+    [200.4136196]]
+    
+C = [[-1, 0]]
+```
+
+With the A and B matrices calculated, we can use the acquired distance values, the PWM values and the previous state estimation of the robot to calculate the new state as given in the lecture notes. I used the C vector defined for task B in the lecture handout alongside matrices A and B calculated for one timestep; after about 5 iterations, I obtained a fairly precise estimation of the robot’s state using the Kalman filter.
 
 ![Python kalman](./images/lab7_initkalman.png)
 

@@ -50,4 +50,4 @@ Under Construction.
 
 [LAB 11: LOCALIZATION (BAYES FILTER, SIMULATION)](./lab11.html)
 
-Under Construction.
+Lab 11 implements the Bayes Filter for performing state estimation and localization tasks in simulation before attempting these on the real robot for planning and execution.

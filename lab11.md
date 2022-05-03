@@ -10,6 +10,8 @@ Bayes Filter is a powerful probabilistic tool for estimating a robot's state giv
 
 #### Implementation
 
+![Bayes Algorithm](./images/lab11_bayesalg.png)
+
 The codebase for this lab consisted of several useful classes that abstract away the nuances of setting up the environment and trajectory for the robot, allowing us to focus on the implementation of the filter itself. Broadly, the implementation of the filter was split into the following steps:
 
 (i) Computing the control information using odometry data for current and previous poses; 
@@ -25,6 +27,8 @@ The codebase for this lab consisted of several useful classes that abstract away
 The principal part of the filter is covered in steps (iii) to (v), as given in the pseudocode for the algorithm in lecture. We define the robot state in terms of `(x, y, yaw angle)` in order to get the position and orientation of the robot. The robot is bounded between -5.5 to 6.5 feet in both the x and y directions, and from -180 to 180 degrees over yaw angles. The real world map consists of discrete 1 foot by 1 foot tiles, and the angular range is split into 18 intervals, for a total of 1944 unique grid cells.
 
 ##### Compute Control information
+
+![State changes](./images/lab11_states.png)
 
 The `compute_control` function is used to calculate the control coefficients (in terms of a rotation, followed by a translation, followed by a rotation) given two odometry poses in the form `(x, y, angle)` as illustrated in the below diagram and the corresponding code segment.
 

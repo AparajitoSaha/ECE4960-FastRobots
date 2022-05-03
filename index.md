@@ -46,7 +46,7 @@ Lab 9 starts the second sequence of assignments by making the robot map a static
 
 [LAB 10: SIMULATOR](./lab10.html)
 
-Under Construction.
+Lab 10 walks through a simulator, which is used to test out key software for planning and execution before implementation on the real robot.
 
 [LAB 11: LOCALIZATION (BAYES FILTER, SIMULATION)](./lab11.html)
 

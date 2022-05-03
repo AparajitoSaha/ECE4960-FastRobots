@@ -6,7 +6,7 @@ layout: default
 
 [Back to Home](./index.html)
 
-Bayes Filter is a simple but powerful probabilistic tool for estimating a robot's state given only its previous position, control input and sensor accuracy. Lab 11 involves implementing this filter and observing its performance in simulation, allowing us to observe the potential performance of our robot in the real-world map first shown in Lab 9 and track down potential points of failure.
+Bayes Filter is a powerful probabilistic tool for estimating a robot's state given only its previous position, control input and sensor accuracy. Lab 11 involves implementing this filter and observing its performance in simulation, allowing us to observe the potential performance of our robot in the real-world map first shown in Lab 9 and track down potential points of failure.
 
 #### Implementation
 
@@ -16,13 +16,18 @@ The codebase for this lab consisted of several useful classes that abstract away
 
 (ii) Computing the probability distribution for position from the odometry motion model;
 
-(iii) Predicting the belief distribution for grid localization based on the odometry model;
+(iii) Predicting the belief distribution for grid localization based on the odometry model and prior belief;
 
 (iv) Calculating the probability distribution for the sensor model given actual distances;
 
 (v) Updating the belief distribution using the predicted belief and the sensor model.
 
+The principal part of the filter is covered in steps (iii) to (v), as given in the pseudocode for the algorithm in lecture. We define the robot state in terms of `(x, y, yaw angle)` in order to get the position and orientation of the robot. The robot is bounded between -5.5 to 6.5 feet in both the x and y directions, and from -180 to 180 degrees over yaw angles. The real world map consists of discrete 1 foot by 1 foot tiles, and the angular range is split into 18 intervals, for a total of 1944 unique grid cells.
+
 ##### Compute Control information
+
+The `compute_control` function is used to calculate the control coefficients (in terms of a rotation, followed by a translation, followed by a rotation) given two odometry poses in the form `(x, y, angle)` as illustrated in the below diagram and the corresponding code segment.
+
 ```python
 def compute_control(cur_pose, prev_pose):
     """ Given the current and previous odometry poses, this function extracts
@@ -54,6 +59,8 @@ def compute_control(cur_pose, prev_pose):
 ```
 
 ##### Odometry motion model
+
+The odometry motion model calculates the probability of the robot moving to a given position, given a prior position and control sequence `p(x'|x, u)`. To account for uncertainties in odometry, we sample the probabilities from a gaussian distribution with rotation and translation uncertainties dictating the standard deviation of the distribution. The formula and corresponding code snippet is provided below.
 
 ```python
 def odom_motion_model(cur_pose, prev_pose, u):
@@ -87,6 +94,8 @@ def odom_motion_model(cur_pose, prev_pose, u):
 ```
 
 ##### Prediction Step
+
+With the odometry motion model and the control computation mechanism established, we calculate the predicted belief (or `bel_bar`) for each of the 1944 grid cells in our map based on the prior belief matrix and control data for the most recent movement. In this process, we iterate over every cell in the map twice (once for the prior belief and once for the current predicted beliefs). Due to the computational cost associated with this step, we filter out belief values below a specific probability (0.01%) and normalize the resulting matrix to maintain a total probability sum of 1. 
 
 ```python
 def prediction_step(cur_odom, prev_odom):
@@ -123,6 +132,8 @@ def prediction_step(cur_odom, prev_odom):
 
 ##### Sensor Model
 
+The sensor model in the Bayes Filter gives us the probability of the similarity of sensor readings to the actual distances observed at a particular location. Like the `compute_control()` function, we use a Gaussian to compute the probability of the obtained sensor measurements.
+
 ```python
 def sensor_model(obs):
     """ This is the equivalent of p(z|x).
@@ -145,6 +156,8 @@ def sensor_model(obs):
 ```
 
 ##### Update Step
+
+The update step uses the predicted beliefs and the sensor model to compute the actual state beliefs of the robot. Like the prediction step, the beliefs have to be updated for every grid cell in the map, which means that we iterate through all 1944 possible states. To account for any discrepancy from the multiplication of the sensor model and the predicted belief, we normalize the belief distribution to ensure that we do not accumulate error.
 
 ```python
 def update_step():
@@ -171,8 +184,10 @@ def update_step():
 ```
 
 #### Results
-The videos below show the robot's trajectory, odometry, belief and marginal distribution for the best run of the Bayes' Filter algorithm I implemented using the above code snippets.
+The videos below show the robot's trajectory, odometry, belief and marginal distribution for the best run of the Bayes' Filter algorithm I implemented using the above code snippets. By observing the belief and marginal distribution, we can see that the Bayes Filter approximates the robot's state quite well!
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bDZRUPY3zu0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/gML6piWjRWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+There are definitely some code optimizations I can make to improve the runtime of the program. I chose to maintain local variables in the prediction and update steps for the sake of easy debugging - however, reassigning the values to the class variable in both cases consumes time. In addition, I could also have factored in the sensor model computation within the update step itself as opposed to in a different function in order to decrease context switching to a different function for calculation. I will make these updates for Lab 12!

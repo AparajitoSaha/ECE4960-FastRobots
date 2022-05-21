@@ -30,7 +30,7 @@ Lab 5 requires us to factor in the motor drivers to our hardware setup and mount
 
 [LAB 6: CLOSED LOOP CONTROL](./lab6.html)
 
-Under Construction.
+Lab 6 starts a 3 part lab on stunt execution, focusing on closed loop PID control using sensor values dependent on the desired task.
 
 [LAB 7: KALMAN FILTER](./lab7.html)
 
@@ -38,7 +38,7 @@ Lab 7 develops the Kalman Filter, which is used to improve the state estimation 
 
 [LAB 8: STUNTS!](./lab8.html)
 
-Under Construction.
+Lab 8 ends the 3 part sequence culminating in stunt execution, with the robot performing a closed loop 180 degree drift as well as a repeatable open loop stunt.
 
 [LAB 9: MAPPING](./lab9.html)
 
@@ -51,3 +51,13 @@ Lab 10 walks through a simulator, which is used to test out key software for pla
 [LAB 11: LOCALIZATION (BAYES FILTER, SIMULATION)](./lab11.html)
 
 Lab 11 implements the Bayes Filter for performing state estimation and localization tasks in simulation before attempting these on the real robot for planning and execution.
+
+
+[LAB 12: LOCALIZATION (BAYES FILTER, REAL)](./lab12.html)
+
+Lab 12 extends the localization module from Lab 11, with the real robot attempting to predict its position in the map using the Bayes Filter and time-of-flight sensor values.
+
+
+[LAB 13: PLANNING AND EXECUTION](./lab13.html)
+
+Lab 13 combines all our learnings from the latter sequence of labs to make the robot execute a desired trajectory within the map as accurately and quickly as possible.

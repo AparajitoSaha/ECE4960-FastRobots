@@ -34,7 +34,7 @@ function Kalman (x, sig, u, z):
 
 The control sequence for the stunt was quite straightforward. The robot is meant to start about 4 meters away from the wall, drive until it is 0.6 meters away from the wall, execute the 180 degree turn and drive back to its starting point. I used code from Lab 6 to execute the turn, and integrated the Kalman filter to drive forward to the 0.6 meter mark. I drove forward with a PWM value of 200 for faster action, and adjusted the PD gains for the turn to account for the difference in the floor as well as better response time. Due to the issues with the Kalman filter and minor latencies in bluetooth communication, I had to start the turn earlier to hit the 0.6 meter threshold, around the 1 meter mark. Check out the video below for the stunt!
 
-** video **
+<iframe width="560" height="315" src="https://www.youtube.com/embed/c6GeIn7NGfg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
 
 #### Open Loop, Repeatable Stunt
 

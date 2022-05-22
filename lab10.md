@@ -88,7 +88,7 @@ while cmdr.sim_is_running() and cmdr.plotter_is_running():
 
 ![closed loop](./images/lab10_closedloop.png)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/p0AafxoumMU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1-AIiZZ93S0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 While we do know how close the robot is to an obstacle thanks to the ToF sensor, it is difficult to determine the value by which the robot should turn to avoid the obstacle entirely. Randomizing the angle makes it more feasible for the robot to avoid an obstacle, but the process is not always deterministic.
 
